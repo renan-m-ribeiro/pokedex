@@ -1,7 +1,6 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient( 135deg, chartreuse 35% , rgba(139, 55, 139) 65% );
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -58,10 +57,10 @@
     padding: 3%;
 }
 
-.typeGrass {
+.grass {
     background-color: chartreuse;
 }
-.typePoison {
+.poison {
     background-color: rgb(139, 55, 139);
 }
 
