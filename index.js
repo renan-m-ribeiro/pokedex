@@ -12,10 +12,13 @@ window.onload = function() {
     }));
     
     function updateBackground(pokemon){
+        document.getElementById("type1").setAttribute("style", `background-color: ${colorsType[pokemon.type1]}`);
+        document.getElementById("type2").setAttribute("style", `background-color: ${colorsType[pokemon.type2]}`);
         if (pokemon.type2 != "none") {
         document.getElementById("background").setAttribute("style", `background: linear-gradient( 135deg, ${colorsType[pokemon.type1]} 35% , ${colorsType[pokemon.type2]} 65% );`)
         } else {
-            document.getElementById("background").setAttribute("style", `background: ${colorsType[pokemon.type1]}`)
+            document.getElementById("background").setAttribute("style", `background: ${colorsType[pokemon.type1]}`);
+            document.getElementById("type2").setAttribute("style", `display: none`);
         }
     }
     function updateCard(pokemon) {
