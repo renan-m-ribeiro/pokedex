@@ -12,19 +12,28 @@ window.onload = function() {
     }));
     
     function updateBackground(pokemon){
-        document.getElementById("fundo").setAttribute("style", `background: linear-gradient( 135deg, ${colorsType[pokemon.type1]} 35% , ${colorsType[pokemon.type2]} 65% );`)
+        if (pokemon.type2 != "none") {
+        document.getElementById("background").setAttribute("style", `background: linear-gradient( 135deg, ${colorsType[pokemon.type1]} 35% , ${colorsType[pokemon.type2]} 65% );`)
+        } else {
+            document.getElementById("background").setAttribute("style", `background: ${colorsType[pokemon.type1]}`)
+        }
     }
     function updateCard(pokemon) {
-        document.getElementById("card").innerHTML = `<p class="text" id="id">${pokemon.id}</p>
+        document.getElementById("card-front").innerHTML = `
+        <p class="text" id="id">${pokemon.id}</p>
         <h1 class="text" id="name">${pokemon.name}</h1>
         <img class="img" id="image" src="${pokemon.image}" alt="">
         <div>
-        <p class="text ${pokemon.type1} box3" id="type1">${pokemon.type1}</p>
-        <p class="text ${pokemon.type2} box3" id="type2">${pokemon.type2}</p>
+            <p class="text ${pokemon.type1} box3" id="type1">${pokemon.type1}</p>
+            <p class="text ${pokemon.type2} box3" id="type2">${pokemon.type2}</p>
         </div>
         <div class="box2">
-        <p class="text2" id="description">${pokemon.description}</p>
+            <p class="text2" id="description">${pokemon.description}</p>
         </div>` 
+
+        document.getElementById("card-back").innerHTML = `
+        <p class="text" id="id">${pokemon.id}</p>
+        <h1 class="text" id="name">${pokemon.name}</h1>`
         updateBackground(pokemon)
     }
 }
