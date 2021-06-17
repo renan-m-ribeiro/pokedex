@@ -6,11 +6,13 @@
     justify-content: center;
     align-items: center
 }
+
 .flip-container {
     width: 300px;
     height: 70vh;
     perspective: 1000px;
 }
+
 .flipper {
     position: relative;
 	width: 100%;
@@ -18,34 +20,42 @@
 	transform-style: preserve-3d;
     transition: transform 0.8s;
 }
-#switch:checked ~ .flip-container .flipper{
+
+#switch:checked ~ .flip-container .flipper {
 	transform: rotateY(180deg);
 }
-.back{
+
+.back {
 	transform: rotateY(180deg);
 }
+
 .front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
+
 #switch {
-	display: none;
+	visibility: hidden;
 }
+
 .box {
     width: 300px;
     height: auto;
     background: #fff;
     border-radius: 30px;
 }
+
 .box2 {
     margin: 0 15%;
 }
+
 .box3 {
     margin: 1% 35%;
     border-radius: 30px;
 }
+
 .img {
     display: block;
     margin-left: auto;
@@ -54,7 +64,7 @@
     height: 200px;
 }
 
-.text{
+.text {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -62,7 +72,7 @@
     font-family: 'Do Hyeon', sans-serif;
 }
 
-.text2{
+.text2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,7 +81,11 @@
     font-family: 'Do Hyeon', sans-serif;
 }
 
-.button{
+.name {
+    text-transform: capitalize;
+}
+
+.button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -84,15 +98,9 @@
     padding: 3%;
 }
 
-.grass {
-    background-color: chartreuse;
-}
-.poison {
-    background-color: rgb(139, 55, 139);
-}
 
 body {
-margin: 0px;
+    margin: 0px;
 }
 
 div{
