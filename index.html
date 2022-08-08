@@ -12,23 +12,27 @@
 <body>
     <div id="background" class="container">
         <input type="search" id="search">
-        <input type="checkbox" id="switch" />
-        <button type="button" id="prev" class="button">&lt</button>
-        <label class="flip-container" for="switch" >
-        <div class="flip-container">
-            <div class="flipper">
-                <div class="front">
-                    <div id="card-front" class="box"></div>
+        <div id="card-show">
+            <input type="checkbox" id="switch" />
+            <button type="button" id="prev" class="button">&lt</button>
+            <label class="flip-container" for="switch" >
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <div id="card-front" class="box"></div>
+                        </div>
+                        <div class="back">
+                            <div id="card-back" class="box"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="back">
-                    <div id="card-back" class="box"></div>
-                </div>
-            </div>
+            </label>
+            <button type="button" id="next" class="button">&gt</button>
         </div>
-    </label>
-
-        <button type="button" id="next" class="button">&gt</button>
     </div>
+        
+
+        
     <script src="pokemons.js"></script>
     <script src="colorsType.js"></script>
     <script src="index.js"></script>
