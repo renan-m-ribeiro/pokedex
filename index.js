@@ -1,22 +1,26 @@
 window.onload = function() {
-    let index = 0;
+    let index = 1;
+    let indexMax = 152;
     const getById = (id) => document.getElementById(id);
     const setBackground = (id, value) => getById(id).setAttribute('style', `background: ${value}`);
-    updateCard(pokemons[index]);
+    pokemons(index)
+    updateCard(pokemon);
 
     document.querySelectorAll("button").forEach(button => button.addEventListener("mouseup", function(event){
         if(event.target.id === "next") {
-            index >= pokemons.length - 1 ? index = 0 : index++;
+            index >= indexMax ? index = 1 : index++;
         } else if(event.target.id === "prev") {
-            index <= 0 ? index = pokemons.length -1 : index--;
+            index <= 1 ? index = indexMax : index--;
         }
-        updateCard(pokemons[index]);
+        pokemons(index)
+        updateCard(pokemon);
     }));
 
-    getById("search").addEventListener("keyup", function(event){
-        const foundIndex = pokemons.findIndex(pokemon => pokemon.name.includes(event.target.value.toLowerCase())) || 0;
-        updateCard(pokemons[foundIndex]);
+    /*getById("search").addEventListener("keyup", function(event){
+        event.preventDefault();
+        updateCard(pokemons(index));
     })
+    */
 
     function updateBackground(pokemon){
         ["type1", "type2"].forEach(type => setBackground(type, colorsType[pokemon[type]]));
@@ -27,6 +31,7 @@ window.onload = function() {
             getById("type2").setAttribute("style", `display: none`);
         }
     }
+    
 
     function updateCard(pokemon) {
         getById("card-front").innerHTML = `
