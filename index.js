@@ -1,18 +1,18 @@
 window.onload = function() {
-    let index = 1;
-    let indexMax = 152;
+    let index = 0;
+    let indexMax = 151;
     const getById = (id) => document.getElementById(id);
     const setBackground = (id, value) => getById(id).setAttribute('style', `background: ${value}`);
     pokemons(index)
     updateCard(pokemon);
 
-    document.querySelectorAll("button").forEach(button => button.addEventListener("mouseup", function(event){
+    document.querySelectorAll("button").forEach(button => button.addEventListener("mouseup", async function(event){
         if(event.target.id === "next") {
             index >= indexMax ? index = 1 : index++;
         } else if(event.target.id === "prev") {
             index <= 1 ? index = indexMax : index--;
         }
-        pokemons(index)
+        await pokemons(index)
         updateCard(pokemon);
     }));
 
