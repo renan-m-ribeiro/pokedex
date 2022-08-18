@@ -3,4 +3,4 @@
 Pokédex project with vanilla HTML, CSS and Javascript
 
 ## Planned features
-- [ ] Pokédex API integration
+- [x] Pokédex API integration
