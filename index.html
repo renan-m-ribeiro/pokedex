@@ -13,23 +13,23 @@
     <div id="background" class="container">
         <input type="search" id="search">
         <div id="card-show">
-            <input type="checkbox" id="switch" />
-            <button type="button" id="prev" class="button">&lt</button>
-            
-                <label class="flip-container" for="switch" >
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <div class="front">
-                                <div id="card-front" class="box"></div>
-                            </div>
-                            <div class="back">
-                                <div id="card-back" class="box"></div>
-                            </div>
+        <input type="checkbox" id="switch" />
+        <button type="button" id="prev" class="button">&lt</button>
+        <img class="img" id="frontImage" hidden src="src/pokedex.png" alt="">
+            <label id="label" class="flip-container" hidden for="switch" >
+                <div class="flip-container">
+                    <div class="flipper">
+                        <div class="front">
+                            <div id="card-front" class="box"></div>
+                        </div>
+                        <div class="back">
+                            <div id="card-back" class="box"></div>
                         </div>
                     </div>
-                </label>
-            
-            <button type="button" id="next" class="button">&gt</button>
+                </div>
+            </label>
+        
+        <button type="button" id="next" class="button">&gt</button>
         </div>
     </div>
         

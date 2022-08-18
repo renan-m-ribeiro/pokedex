@@ -5,30 +5,7 @@ window.onload = function() {
     const setBackground = (id, value) => getById(id).setAttribute('style', `background: ${value}`);
 
    
-    if(index == 0) {
-        getById("card-show").innerHTML = `
-        
-        <input type="checkbox" id="switch" />
-        <button type="button" id="prev" class="button">&lt</button>
-        <img class="img" id="frontImage" src="src/pokedex.png" alt="">
-            <label id="label" class="flip-container" hidden for="switch" >
-                <div class="flip-container">
-                    <div class="flipper">
-                        <div class="front">
-                            <div id="card-front" class="box"></div>
-                        </div>
-                        <div class="back">
-                            <div id="card-back" class="box"></div>
-                        </div>
-                    </div>
-                </div>
-            </label>
-        
-        <button type="button" id="next" class="button">&gt</button>`
-    } else {
-        getById("frontImage").setAttribute(hidden, true);
-        getById("label").setAttribute(hidden, false);
-    }
+    
 
     document.querySelectorAll("button").forEach(button => button.addEventListener("mouseup", async function(event){
         if(event.target.id === "next") {
@@ -38,6 +15,11 @@ window.onload = function() {
         }
         await pokemons(index)
         updateCard(pokemon);
+
+        if(index != 0) {
+            getById("frontImage").remove()
+            getById('label').removeAttribute('hidden')
+        }
     }));
 
 
